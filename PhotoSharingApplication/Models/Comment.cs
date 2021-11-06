@@ -11,6 +11,8 @@ namespace PhotoSharingApplication.Models
         public int CommentID { get; set; }
         public int PhotoID { get; set; }
         public string UserName { get; set; }
+        [Required]
+        [StringLength(250)]
         public string Subject { get; set; }
         [DataType(DataType.MultilineText)]
         public string Body { get; set; }
