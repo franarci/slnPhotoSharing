@@ -13,15 +13,15 @@ namespace PhotoSharingApplication.Models
         [Required]
         public string Title { get; set; }
         [DisplayName("Picture")]
-        public byte[] PhotoFile{get; set; }
+        public byte[] PhotoFile { get; set; }
         public string ImageMimeType { get; set; }
         [DataType(DataType.MultilineText)]
         public string Description { get; set; }
         [DataType(DataType.DateTime)]
         [DisplayName("Created Date")]
         [DisplayFormat(DataFormatString = "{0:MM/dd/yy}")]
-        public DateTime CreatedDate{ get; set; }
+        public DateTime CreatedDate { get; set; }
         public string UserName { get; set; }
         public virtual ICollection<Comment> Comments { get; set; }
-
+    }
 }
