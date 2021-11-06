@@ -42,6 +42,22 @@ namespace PhotoSharingApplication.Models
 
             photos.ForEach(s =>context.Photos.Add(s));
             context.SaveChanges();
-        }
+
+            var comments = new List<Comment>
+            {
+                new Comment
+                {
+                    PhotoID = 1,
+                    UserName = "NaokiSato",
+                    Subject ="Test Comment",
+                    Body = "This comment"+" should appear in"+" photo 1 "
+                }
+            };
+
+            comments.ForEach(s =>context.Comments.Add(s));
+            context.SaveChanges();
+    }
+
+
     }
 }
