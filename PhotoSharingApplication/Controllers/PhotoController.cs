@@ -9,6 +9,7 @@ using PhotoSharingApplication.Models;
 
 namespace PhotoSharingApplication.Controllers
 {
+    [ValueReporter]
     public class PhotoController : Controller
     {
         private PhotoSharingContext context = new PhotoSharingContext();
