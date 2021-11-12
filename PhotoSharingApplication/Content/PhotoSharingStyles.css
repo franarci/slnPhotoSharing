@@ -1,11 +1,13 @@
-﻿body {
+﻿
+
+
+body {
     background: #7f9aae;
     background-image: url('BackgroundGradient.jpg');
     background-repeat: repeat-x;
     font-family: segoe ui, verdana, arial, sans-serif;
     font-weight: 300;
     color: #FBFBFB;
-    
 }
 
 .site-page-title {
@@ -16,7 +18,7 @@
 .login-controls {
     float: right;
     width: 200px;
-    background-color:#608dae;
+    background-color: #608dae;
     height: 25px;
     line-height: 2em;
     border-radius: 10px;
@@ -78,7 +80,7 @@
 }
 
 .pic-upload-input {
-    width: 400px;    
+    width: 400px;
 }
 
 .photo-index-card {
@@ -96,8 +98,8 @@
 }
 
 .photo-index-card-img {
-	width: 250px;
-	max-height: 320px;
+    width: 250px;
+    max-height: 320px;
 }
 
 .photo-metadata {
@@ -128,7 +130,7 @@
     border-width: 2px;
     border-style: solid;
     border-radius: 10px;
-    padding: 15px;    
+    padding: 15px;
     margin: 5px;
 }
 
@@ -138,8 +140,8 @@
     border-width: 2px;
     border-style: solid;
     border-radius: 10px;
-    padding: 15px;    
-    margin: 5px;   
+    padding: 15px;
+    margin: 5px;
 }
 
 .photo-comment-body {
@@ -151,7 +153,7 @@
 }
 
 #slide-show {
-    position:relative;
+    position: relative;
     height: 650px;
 }
 
@@ -179,8 +181,24 @@
 #slide-show DIV.last-active-card {
     z-index: 9;
 }
+nav a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 14px;
+}
+
+nav li {
+    display: inline-block;
+    width: 10%;
+    padding: 5px 10px;
+    background-color: #808080;
+    border: 1px solid #808080;
+    text-align: center;
+    color: #fff;
+}
 
 @media only screen and (max-width: 500px) {
+
     .topmenulink {
         float: left;
         background-color: #cccccc;
@@ -191,5 +209,4 @@
         border-radius: 5px;
         margin: 5px;
     }
-
 }

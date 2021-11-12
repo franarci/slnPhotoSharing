@@ -10,6 +10,7 @@ using PhotoSharingApplication.Models;
 namespace PhotoSharingApplication.Controllers
 {
     [ValueReporter]
+    [HandleError(View = "Error")]
     public class PhotoController : Controller
     {
         private PhotoSharingContext context = new PhotoSharingContext();
@@ -56,7 +57,7 @@ namespace PhotoSharingApplication.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create (Photo photo, HttpPostedFileBase image)
+        public ActionResult Create(Photo photo, HttpPostedFileBase image)
         {
             photo.CreatedDate = DateTime.Today;
             if (!ModelState.IsValid)
@@ -67,9 +68,9 @@ namespace PhotoSharingApplication.Controllers
             {
                 if (image != null)
                 {
-                    photo.ImageMimeType =image.ContentType;
+                    photo.ImageMimeType = image.ContentType;
                     photo.PhotoFile = new byte[image.ContentLength];
-                    image.InputStream.Read(photo.PhotoFile, 0,image.ContentLength);
+                    image.InputStream.Read(photo.PhotoFile, 0, image.ContentLength);
                 }
             }
             context.Photos.Add(photo);
@@ -91,7 +92,7 @@ namespace PhotoSharingApplication.Controllers
         [ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
-            Photo photo =context.Photos.Find(id);
+            Photo photo = context.Photos.Find(id);
             context.Photos.Remove(photo);
             context.SaveChanges();
             return RedirectToAction("Index");
@@ -102,7 +103,7 @@ namespace PhotoSharingApplication.Controllers
             Photo photo = context.Photos.Find(id);
             if (photo != null)
             {
-                return File(photo.PhotoFile,photo.ImageMimeType);
+                return File(photo.PhotoFile, photo.ImageMimeType);
             }
             else
             {
@@ -110,6 +111,11 @@ namespace PhotoSharingApplication.Controllers
             }
 
         }
+        public ActionResult SlideShow()
+        {
+            throw new NotImplementedException("The SlideShow action is not yet ready");
+        }
+
 
 
     }
